@@ -19,11 +19,26 @@ Step 6) 1 is odd; subtract 1 and obtain 0.
  */
 
 public class NumberOfSteps {
+
+    //using recursion to solve
     static int numberOfSteps(int num) {
-
+        return helper(num, 0);
     }
-    
-    public static void main(String[] args) {
 
+    //helper function
+    static int helper(int num, int counter) {
+        if(num==0) { return counter;}
+
+        if(num%2==0) {
+            return helper(num/2, counter +1);
+        } else
+            return helper(num-1, counter + 1);
+    }
+
+    public static void main(String[] args) {
+        int num = 14;
+        int num2 = 123;
+        System.out.println(numberOfSteps(num));
+        System.out.println(numberOfSteps(num2));
     }
 }
