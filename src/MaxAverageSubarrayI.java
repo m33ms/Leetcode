@@ -12,10 +12,12 @@ Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
 
 public class MaxAverageSubarrayI {
     static double findMaxAverage(int[] nums, int k) {
-       
+
     }
 
     public static void main(String[] args) {
-
+        int[] nums = {1, 12, -5, -6, 50, 3};
+        int k = 4;
+        
     }
 }
