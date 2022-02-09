@@ -13,10 +13,29 @@ Output: true
 
 public class IsStringPrefixArray {
    static boolean isPrefixString(String s, String[] words) {
+        //using StringBuilder because it is mutable
+       StringBuilder str = new StringBuilder();
 
+       for(String word: words) {
+           str.append(word);
+
+           //if the string s is equal to str
+           //return true
+           if(s.equals(str.toString())) {
+               return true;
+           }
+       }
+       return false;
    }
 
     public static void main(String[] args) {
-        
+        String s = "iloveleetcode";
+        String[] words = {"i","love","leetcode","apples"};
+
+        String s2 = "iloveleetcode";
+        String[] words2 = {"apples","i","love","leetcode"};
+
+        System.out.println(isPrefixString(s, words));
+        System.out.println(isPrefixString(s2, words2));
     }
 }
