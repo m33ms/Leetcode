@@ -12,10 +12,25 @@ The substring "ee" is of length 2 with the character 'e' only.
 
 public class ConsecutiveChars {
     static int maxPower(String s) {
+        //brute force
+        int count = 1;
+        int maxCount = 1;
+        for(int i=0; i<s.length()-1; i++) {
+            if(s.charAt(i) == s.charAt(i+1)) {
+                count++;
+                maxCount = Math.max(count, maxCount);
+            } else
+                count = 1;
+        }
 
+        return maxCount;
     }
 
     public static void main(String[] args) {
-        
+        String s = "leetcode";
+        String s2 = "abbcccddddeeeeedcba";
+
+        System.out.println(maxPower(s));
+        System.out.println(maxPower(s2));
     }
 }
