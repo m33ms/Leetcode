@@ -13,10 +13,26 @@ The subarray [4,3] has the minimal length under the problem constraint.
 
 public class MinSizeSubarraySum {
     static int minSubArrayLen(int target, int[] nums) {
+        //using sliding window technique
+        int min = Integer.MAX_VALUE;
+        int start = 0, sum = 0;
 
+        for(int end=0; end<nums.length; end++) {
+            sum += nums[end];
+
+            while(sum >= target) {
+                //current length: end-start+1
+                min = Math.min(min, end-start+1);
+                sum -= nums[start];
+                start++;
+            }
+        }
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 
     public static void main(String[] args) {
-        
+        int[] nums = {2,3,1,2,4,3};
+        int target = 7;
+        System.out.println(minSubArrayLen(target, nums));
     }
 }
