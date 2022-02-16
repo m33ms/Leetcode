@@ -39,7 +39,7 @@ public class TopKFreqWords {
         String[] s2 = {"the","day","is","sunny","the","the","the","sunny","is","is"};
         int k = 2;
         int j = 4;
-        
+
         System.out.println(topKFrequent(s, k));
         System.out.println(topKFrequent(s2, j));
     }
