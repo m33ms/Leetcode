@@ -13,10 +13,11 @@ public class LongestCommonPrefix {
         String prefix = strs[0];
 
         if(strs.length == 0) return "";
-        //iterate starting from the second element in the array
+        //i=1 because iterate starting from the second element in the array
         for(int i=1; i<strs.length; i++) {
-            //System.out.println(strs[i].indexOf(prefix));
+
             while(strs[i].indexOf(prefix) != 0) {
+               // System.out.println(strs[i].indexOf(prefix));
                 //reduce length of prefix to until prefix found
                 prefix = prefix.substring(0, prefix.length()-1);
             }

@@ -20,7 +20,6 @@ public class MaxAverageSubarrayI {
         double sum = 0;
 
         Queue<Integer> list = new LinkedList<>();
-
         for(int i=0; i<nums.length;i++) {
             list.add(nums[i]);
             sum += nums[i];
